@@ -9,16 +9,22 @@ import { useAuthContext } from '../contexts/AuthContext';
 import { trpc } from '../utils/trpc';
 
 type ChatsColumnProps = {
-  chats: Array<Chat>
+  loading: boolean
 }
 
-const ChatsColumn: React.FC<ChatsColumnProps> = ({ chats }) => {
+const ChatsColumn: React.FC<ChatsColumnProps> = ({ loading }) => {
+  const [isLoading, setIsLoading] = useState<boolean>(loading);
   const { state, dispatch } = useChatContext();
   const { users } = useContactContext();
   const { userId } = useAuthContext();
   const [displayMenu, setDisplayMenu] = useState<boolean>(false);
 
   const mutation = trpc.newChat.useMutation();
+
+  useEffect(() => {
+    console.log(loading);
+    setIsLoading(loading);
+  }, [loading])
 
   const handleClick = async (user: User) => {
 
@@ -67,7 +73,7 @@ const ChatsColumn: React.FC<ChatsColumnProps> = ({ chats }) => {
         </div>
         <div>
           {
-            state.allChats && state.allChats.length > 0 ? (
+            !isLoading ? (
               state.allChats.map((chat: Chat) => {
                 return (
                   <ChatBox chatId={chat.id} key={chat.id}/>

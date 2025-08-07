@@ -22,8 +22,9 @@ const CreateMessage = () => {
       mutation.mutate(
         { message, userId: authContext.userId.toString(), chatId: state.currentChat.id.toString() },
         {
-          onSuccess: () => {
+          onSuccess: (data) => {
             if (inputRef.current) inputRef.current.value = '';
+            dispatch({ type: 'ADD_MESSAGE', payload: { chat_id: state.currentChat.id, message, sender_id: authContext.userId, time_sent: data.timeSent  }})
           },
           onError: (error) => {
             console.error('Login failed:', error.message);

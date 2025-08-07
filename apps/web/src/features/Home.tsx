@@ -36,7 +36,7 @@ function Home() {
         toastClassName={'dark-toast'}
         hideProgressBar={true}
       />
-      <ChatsColumn chats={state.allChats} />
+      <ChatsColumn chats={state.allChats} loading={allDataQuery.isLoading} />
       {
         state.currentChat && (
           <ChatInterface currentChat={state.currentChat} />

@@ -39,9 +39,10 @@ const SocketContextProvider: React.FC<{ children: React.ReactNode }> = ({ childr
             <p>{data.message}</p>
           </div>
         );
+
+        dispatch({ type: 'ADD_MESSAGE', payload: { chat_id: data.chatId, message: data.message, sender_id: data.senderId, time_sent: data.time_sent  }})
       }
 
-      dispatch({ type: 'ADD_MESSAGE', payload: { chat_id: data.chatId, message: data.message, sender_id: data.senderId, time_sent: data.time_sent  }})
     }
 
     function newChat(data) {
