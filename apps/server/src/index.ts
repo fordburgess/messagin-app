@@ -116,6 +116,8 @@ const appRouter = router({
         time_sent: timeSent,
         message: message
       })
+
+      return { timeSent }
     }),
 
   newChat: publicProcedure
