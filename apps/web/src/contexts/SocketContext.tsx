@@ -21,7 +21,7 @@ const SocketContextProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   const { dispatch } = useChatContext();
 
   useEffect(() => {
-    const newSocket = io('http://192.168.1.110:3000');
+    const newSocket = io('http://localhost:3000');
 
     setSocket(newSocket);
 
