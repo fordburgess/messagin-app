@@ -51,6 +51,10 @@
 <p>A list of improvements I would make if I had more time to work on this:</p>
 <ul>
   <li>
+    <h4>Message Delays</h4>
+    <p>Due to the time constraint, I couldn't fully address all bugs. All messages are received, but sometimes there's a long delay between when they are sent and received</p>
+  </li>
+  <li>
     <h4>Refactor Frontend</h4>
     <p>The styling and component structure could be more organized. I'd separate concerns more cleanly and apply a consistent styling convention.</p>
   </li>
