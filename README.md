@@ -1,4 +1,4 @@
-How does this sound? "<h1>Legora Fullstack coding challenge</h1>
+<h1>Legora Fullstack coding challenge</h1>
 <h2>Messaging App</h2>
 
 <h3>Intro</h3>
@@ -77,4 +77,3 @@ How does this sound? "<h1>Legora Fullstack coding challenge</h1>
     <p>Relatively simple to do, wouldn't take long to implement</p>
   </li>  
 </ul>
-"
